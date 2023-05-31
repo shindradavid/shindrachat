@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "832351300327",
+    "firebase_url": "https://shindrachat-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "shindrachat",
+    "storage_bucket": "shindrachat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832351300327:android:89d2d1a42780c11efcd042",
+        "android_client_info": {
+          "package_name": "com.example.shindrachat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyJ8Q1uckCnk3lMC1hVkskqXUnEtfwdo0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
