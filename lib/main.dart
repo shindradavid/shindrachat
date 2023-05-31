@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shindrachat/screens/chats_screen.dart';
 import 'package:shindrachat/screens/people_screen.dart';
 import 'package:shindrachat/screens/groups_screen.dart';
+import 'package:shindrachat/screens/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,10 +17,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      theme: Theme.of(context).copyWith(
         useMaterial3: true,
       ),
+      darkTheme: ThemeData.light(),
+      // theme: ThemeData(
+      //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+      //   useMaterial3: true,
+      // ),
       home: const HomeScreen(),
     );
   }
