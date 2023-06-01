@@ -44,9 +44,6 @@ class _SplashScreenState extends State<SplashScreen> {
               children: [
                 Text(
                   'Shindra Chat',
-                  style: TextStyle(
-                    color: GlobalColors.onAccentColor,
-                  ),
                 ),
                 // TextButton(
                 //   style: ButtonStyle(
