@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import 'package:intl_phone_number_input/intl_phone_number_input.dart';
+
 typedef StringOrNull = String? Function(String?);
 
 class PhoneNumberField extends StatefulWidget {
@@ -21,6 +23,9 @@ class PhoneNumberField extends StatefulWidget {
 }
 
 class _PhoneNumberFieldState extends State<PhoneNumberField> {
+  String initialCountry = 'UG';
+  PhoneNumber number = PhoneNumber(isoCode: 'UG');
+
   @override
   Widget build(BuildContext context) {
     return Column(children: [
@@ -29,15 +34,39 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
         children: [
           Text(widget.name),
           SizedBox(height: 8.0),
-          TextFormField(
-            controller: widget.controller,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              contentPadding: EdgeInsets.all(8.0),
+          InternationalPhoneNumberInput(
+            onInputChanged: (PhoneNumber number) {
+              print(number.phoneNumber);
+            },
+            onInputValidated: (bool value) {
+              print(value);
+            },
+            selectorConfig: SelectorConfig(
+              selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
             ),
-            keyboardType: TextInputType.phone,
-            // The validator receives the text that the user has entered.
-            validator: widget.validator,
+            hintText: null,
+            ignoreBlank: false,
+            autoValidateMode: AutovalidateMode.disabled,
+            selectorTextStyle: TextStyle(color: Colors.black),
+            initialValue: number,
+            textFieldController: widget.controller,
+            formatInput: true,
+            inputDecoration: InputDecoration(
+              contentPadding: EdgeInsets.all(8.0),
+              border: OutlineInputBorder(),
+            ),
+            keyboardType:
+                TextInputType.numberWithOptions(signed: false, decimal: false),
+            inputBorder: OutlineInputBorder(),
+            onSaved: (PhoneNumber number) {
+              print('On Saved: $number');
+            },
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter some cool text';
+              }
+              return null;
+            },
           ),
         ],
       )

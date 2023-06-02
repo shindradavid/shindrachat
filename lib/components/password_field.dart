@@ -36,9 +36,9 @@ class _PasswordFieldState extends State<PasswordField> {
                 border: OutlineInputBorder(),
                 contentPadding: EdgeInsets.all(8.0),
                 suffixIcon: IconButton(
-                  icon: Icon(passwordVisible
-                      ? Icons.visibility
-                      : Icons.visibility_off),
+                  icon: Icon(
+                    passwordVisible ? Icons.visibility : Icons.visibility_off,
+                  ),
                   onPressed: () {
                     setState(() {
                       passwordVisible = !passwordVisible;

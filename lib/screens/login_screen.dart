@@ -34,6 +34,16 @@ class _LoginScreenState extends State<LoginScreen> {
             key: _formKey,
             child: ListView(
               children: [
+                Text(
+                  'Log in',
+                  style: TextStyle(
+                    fontSize: 32.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(
+                  height: 64.0,
+                ),
                 PhoneNumberField(
                   name: 'Phone number',
                   controller: phoneNumberController,

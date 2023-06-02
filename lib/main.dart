@@ -4,6 +4,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
+import 'package:intl_phone_number_input/intl_phone_number_input.dart';
+
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'package:flutter/services.dart';
@@ -49,7 +51,7 @@ class MyApp extends StatelessWidget {
       //     colorScheme: ColorScheme.fromSeed(seedColor: Colors.green)),
       darkTheme: ThemeData.light(),
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
       home: const SplashScreen(),

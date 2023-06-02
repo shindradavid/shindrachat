@@ -3,13 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:image_cropper/image_cropper.dart';
+import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:shindrachat/components/password_field.dart';
 import 'package:shindrachat/components/custom_text_field.dart';
 import 'package:shindrachat/components/phoneNumberField.dart';
-import 'package:shindrachat/screens/home_screen.dart';
+import 'package:shindrachat/screens/verify_account_screen.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -58,6 +59,16 @@ class _SignupScreenState extends State<SignupScreen> {
                   key: _formKey,
                   child: Column(
                     children: [
+                      Text(
+                        'Sign up',
+                        style: TextStyle(
+                          fontSize: 32.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 64.0,
+                      ),
                       CustomTextField(
                         name: 'Name',
                         controller: nameController,
@@ -70,14 +81,15 @@ class _SignupScreenState extends State<SignupScreen> {
                       ),
                       SizedBox(height: 24.0),
                       PhoneNumberField(
-                          name: 'Phone number',
-                          controller: phoneNumberController,
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter some cool text';
-                            }
-                            return null;
-                          }),
+                        name: 'Phone number',
+                        controller: phoneNumberController,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter some cool text';
+                          }
+                          return null;
+                        },
+                      ),
                       SizedBox(height: 24.0),
                       PasswordField(
                         name: 'Password',
@@ -147,7 +159,7 @@ class _SignupScreenState extends State<SignupScreen> {
                               );
                               Navigator.of(context).push(
                                 MaterialPageRoute(
-                                  builder: (context) => HomeScreen(),
+                                  builder: (context) => VerifyAccountScreen(),
                                 ),
                               );
                             }

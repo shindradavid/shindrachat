@@ -41,9 +41,10 @@ class _SplashScreenState extends State<SplashScreen> {
           padding: const EdgeInsets.all(16.0),
           child: Center(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  'Shindra Chat',
+                SizedBox(
+                  height: 0.0,
                 ),
                 // TextButton(
                 //   style: ButtonStyle(
@@ -58,27 +59,58 @@ class _SplashScreenState extends State<SplashScreen> {
                 //     style: TextStyle(color: GlobalColors.accentColor),
                 //   ),
                 // ),
-                fullWidthButton(
-                  'Sign up',
-                  GlobalColors.bgPrimary,
-                  () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const SignupScreen(),
+                Column(
+                  children: [
+                    Image.asset(
+                      'assets/Logo.jpg',
+                      fit: BoxFit.contain,
+                      height: 150.0,
+                      width: 150.0,
+                    ),
+                    SizedBox(height: 16.0),
+                    Text(
+                      'Shindra Chat',
+                      style: TextStyle(
+                          fontSize: 20.0, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 8.0),
+                    Text(
+                      'The world\'s fastest chat application.',
+                      style: TextStyle(
+                        fontSize: 14.0,
+                        color: Colors.black54,
                       ),
-                    );
-                  },
+                    ),
+                  ],
                 ),
-                fullWidthButton(
-                  'Log in',
-                  GlobalColors.bgPrimary,
-                  () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const LoginScreen(),
-                      ),
-                    );
-                  },
+                Column(
+                  children: [
+                    FullWidthButton(
+                      'Sign up',
+                      GlobalColors.bgPrimary,
+                      () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const SignupScreen(),
+                          ),
+                        );
+                      },
+                    ),
+                    FullWidthButton(
+                      'Log in',
+                      GlobalColors.bgPrimary,
+                      () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const LoginScreen(),
+                          ),
+                        );
+                      },
+                    ),
+                    SizedBox(
+                      height: 16.0,
+                    )
+                  ],
                 ),
               ],
             ),

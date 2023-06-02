@@ -4,7 +4,7 @@ import 'package:shindrachat/global_colors.dart';
 
 typedef VoidCallback = void Function();
 
-Widget fullWidthButton(String text, Color color, VoidCallback onPressed) {
+Widget FullWidthButton(String text, Color color, VoidCallback onPressed) {
   return SizedBox(
     width: double.infinity,
     child: ElevatedButton(
